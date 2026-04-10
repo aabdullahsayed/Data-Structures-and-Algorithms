@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 950" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', 'Segoe Print', cursive, sans-serif;">
+  <defs>
+    <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <g filter="url(#sketchy)">
+    <path d="M 260 65 Q 450 63 640 66" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 265 71 Q 450 73 635 70" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="450" y="45" text-anchor="middle" font-size="26" font-weight="bold" fill="#0f172a" letter-spacing="1">BINARY SEARCH O(log N)</text>
+  
+  <text x="450" y="100" text-anchor="middle" font-size="16" font-weight="bold" fill="#ef4444">⚠️ PREREQUISITE: The array MUST be sorted!</text>
+
+  <g transform="translate(680, 80)">
+    <g filter="url(#sketchy)">
+      <rect x="0" y="0" width="150" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" transform="rotate(1)"/>
+    </g>
+    <text x="75" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Target = <tspan fill="#2563eb">75</tspan></text>
+  </g>
+
+  <text x="50" y="190" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">ITERATION 1</text>
+  <text x="50" y="215" font-size="14" fill="#64748b">Search space: 0 to 7</text>
+
+  <g transform="translate(215, 170)">
+    <g filter="url(#sketchy)">
+      <g stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff">
+        <rect x="0" y="0" width="50" height="40" rx="3" transform="rotate(-1, 25, 20)"/>
+        <rect x="60" y="0" width="50" height="40" rx="3" transform="rotate(0.5, 85, 20)"/>
+        <rect x="120" y="0" width="50" height="40" rx="3" transform="rotate(-0.5, 145, 20)"/>
+        <rect x="180" y="-2" width="50" height="44" rx="3" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5" transform="rotate(1, 205, 20)"/>
+        <rect x="240" y="0" width="50" height="40" rx="3" transform="rotate(-1, 265, 20)"/>
+        <rect x="300" y="0" width="50" height="40" rx="3" transform="rotate(0.5, 325, 20)"/>
+        <rect x="360" y="0" width="50" height="40" rx="3" transform="rotate(1, 385, 20)"/>
+        <rect x="420" y="0" width="50" height="40" rx="3" transform="rotate(-0.5, 445, 20)"/>
+      </g>
+      
+      <path d="M 25 75 Q 22 65 25 50" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+      <path d="M 445 75 Q 448 65 445 50" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+      <path d="M 205 -35 Q 202 -20 205 -10" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+      <path d="M -15 20 Q 115 5 235 25" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <g font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="25" y="26">10</text>
+      <text x="85" y="26">25</text>
+      <text x="145" y="26">32</text>
+      <text x="205" y="26" fill="#2563eb">45</text>
+      <text x="265" y="26">55</text>
+      <text x="325" y="26">68</text>
+      <text x="385" y="26">75</text>
+      <text x="445" y="26">89</text>
+    </g>
+    <g font-size="13" fill="#64748b" text-anchor="middle">
+      <text x="25" y="60">0</text><text x="85" y="60">1</text><text x="145" y="60">2</text>
+      <text x="205" y="60" font-weight="bold" fill="#2563eb">3</text>
+      <text x="265" y="60">4</text><text x="325" y="60">5</text><text x="385" y="60">6</text><text x="445" y="60">7</text>
+    </g>
+
+    <text x="25" y="95" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">Low</text>
+    <text x="445" y="95" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">High</text>
+    <text x="205" y="-45" text-anchor="middle" font-size="16" font-weight="bold" fill="#2563eb">Mid</text>
+
+    <text x="520" y="0" font-size="15" font-weight="bold" fill="#0f172a">1. Compare Target to Mid:</text>
+    <text x="520" y="25" font-size="16" font-weight="bold" fill="#ef4444">75 > 45</text>
+    <text x="520" y="55" font-size="14" fill="#475569">Target is greater, so we</text>
+    <text x="520" y="75" font-size="14" fill="#475569"><tspan font-weight="bold" fill="#ef4444">eliminate the left half.</tspan></text>
+    <text x="520" y="105" font-size="14" font-family="monospace" fill="#2563eb">Low = Mid + 1</text>
+  </g>
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 340 Q 450 335 860 342" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+  <text x="50" y="390" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">ITERATION 2</text>
+  <text x="50" y="415" font-size="14" fill="#64748b">Search space: 4 to 7</text>
+
+  <g transform="translate(215, 370)">
+    <g filter="url(#sketchy)">
+      <g stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="#cbd5e1" fill="#f8fafc">
+          <rect x="0" y="0" width="50" height="40" rx="3" transform="rotate(-1, 25, 20)"/>
+          <rect x="60" y="0" width="50" height="40" rx="3" transform="rotate(0.5, 85, 20)"/>
+          <rect x="120" y="0" width="50" height="40" rx="3" transform="rotate(-0.5, 145, 20)"/>
+          <rect x="180" y="0" width="50" height="40" rx="3" transform="rotate(1, 205, 20)"/>
+        </g>
+        <g stroke="#1e293b" fill="#ffffff">
+          <rect x="240" y="0" width="50" height="40" rx="3" transform="rotate(-1, 265, 20)"/>
+          <rect x="300" y="-2" width="50" height="44" rx="3" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5" transform="rotate(0.5, 325, 20)"/>
+          <rect x="360" y="0" width="50" height="40" rx="3" transform="rotate(1, 385, 20)"/>
+          <rect x="420" y="0" width="50" height="40" rx="3" transform="rotate(-0.5, 445, 20)"/>
+        </g>
+      </g>
+      
+      <path d="M 265 75 Q 262 65 265 50" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+      <path d="M 445 75 Q 448 65 445 50" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+      <path d="M 325 -35 Q 322 -20 325 -10" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+      <path d="M 225 20 Q 295 5 355 25" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <g font-size="16" font-weight="bold" fill="#94a3b8" text-anchor="middle">
+      <text x="25" y="26">10</text><text x="85" y="26">25</text><text x="145" y="26">32</text><text x="205" y="26">45</text>
+    </g>
+    <g font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="265" y="26">55</text>
+      <text x="325" y="26" fill="#2563eb">68</text>
+      <text x="385" y="26">75</text>
+      <text x="445" y="26">89</text>
+    </g>
+    <g font-size="13" fill="#64748b" text-anchor="middle">
+      <text x="265" y="60">4</text>
+      <text x="325" y="60" font-weight="bold" fill="#2563eb">5</text>
+      <text x="385" y="60">6</text><text x="445" y="60">7</text>
+    </g>
+
+    <text x="265" y="95" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">Low</text>
+    <text x="445" y="95" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">High</text>
+    <text x="325" y="-45" text-anchor="middle" font-size="16" font-weight="bold" fill="#2563eb">Mid</text>
+
+    <text x="520" y="0" font-size="15" font-weight="bold" fill="#0f172a">2. Compare Target to Mid:</text>
+    <text x="520" y="25" font-size="16" font-weight="bold" fill="#ef4444">75 > 68</text>
+    <text x="520" y="55" font-size="14" fill="#475569">Target is greater, so we</text>
+    <text x="520" y="75" font-size="14" fill="#475569"><tspan font-weight="bold" fill="#ef4444">eliminate the left half again.</tspan></text>
+    <text x="520" y="105" font-size="14" font-family="monospace" fill="#2563eb">Low = Mid + 1</text>
+  </g>
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 540 Q 450 535 860 542" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+  <text x="50" y="590" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">ITERATION 3</text>
+  <text x="50" y="615" font-size="14" fill="#64748b">Search space: 6 to 7</text>
+
+  <g transform="translate(215, 570)">
+    <g filter="url(#sketchy)">
+      <g stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="#cbd5e1" fill="#f8fafc">
+          <rect x="0" y="0" width="50" height="40" rx="3" transform="rotate(-1, 25, 20)"/>
+          <rect x="60" y="0" width="50" height="40" rx="3" transform="rotate(0.5, 85, 20)"/>
+          <rect x="120" y="0" width="50" height="40" rx="3" transform="rotate(-0.5, 145, 20)"/>
+          <rect x="180" y="0" width="50" height="40" rx="3" transform="rotate(1, 205, 20)"/>
+          <rect x="240" y="0" width="50" height="40" rx="3" transform="rotate(-1, 265, 20)"/>
+          <rect x="300" y="0" width="50" height="40" rx="3" transform="rotate(0.5, 325, 20)"/>
+        </g>
+        <g stroke="#1e293b" fill="#ffffff">
+          <rect x="360" y="-3" width="50" height="46" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="3" transform="rotate(1, 385, 20)"/>
+          <rect x="420" y="0" width="50" height="40" rx="3" transform="rotate(-0.5, 445, 20)"/>
+        </g>
+      </g>
+      
+      <path d="M 375 75 Q 375 65 375 50" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+      <path d="M 445 75 Q 448 65 445 50" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+      <path d="M 385 -35 Q 382 -20 385 -10" fill="none" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-green)"/>
+    </g>
+
+    <g font-size="16" font-weight="bold" fill="#94a3b8" text-anchor="middle">
+      <text x="25" y="26">10</text><text x="85" y="26">25</text><text x="145" y="26">32</text>
+      <text x="205" y="26">45</text><text x="265" y="26">55</text><text x="325" y="26">68</text>
+    </g>
+    <g font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="385" y="26" fill="#059669">75</text>
+      <text x="445" y="26">89</text>
+    </g>
+    <g font-size="13" fill="#64748b" text-anchor="middle">
+      <text x="385" y="60" font-weight="bold" fill="#059669">6</text>
+      <text x="445" y="60">7</text>
+    </g>
+
+    <text x="375" y="95" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">Low</text>
+    <text x="445" y="95" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">High</text>
+    <text x="385" y="-45" text-anchor="middle" font-size="16" font-weight="bold" fill="#10b981">Mid</text>
+
+    <text x="520" y="0" font-size="15" font-weight="bold" fill="#0f172a">3. Compare Target to Mid:</text>
+    <text x="520" y="25" font-size="16" font-weight="bold" fill="#10b981">75 == 75</text>
+    <text x="520" y="55" font-size="16" font-weight="bold" fill="#059669">TARGET FOUND!</text>
+    <text x="520" y="75" font-size="14" fill="#475569">Return index <tspan font-weight="bold" fill="#0f172a">6</tspan></text>
+  </g>
+
+  <g transform="translate(150, 780)">
+    <g filter="url(#sketchy)">
+      <rect x="0" y="0" width="600" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round"/>
+      
+      <path d="M 20 40 L 28 50 L 40 30" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 20 80 L 28 90 L 40 70" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <text x="20" y="0" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="start">Why is this so fast? (The Magic of Logarithms)</text>
+    
+    <text x="55" y="45" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#0f172a">Halves the space:</tspan> Every single check destroys 50% of the wrong answers.</text>
+    <text x="55" y="85" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#0f172a">Massive Scale:</tspan> Searching 1 Million items takes at most ~20 steps. </text>
+  </g>
+
+</svg>

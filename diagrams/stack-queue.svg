@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 950" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', 'Segoe Print', cursive, sans-serif;">
+  <defs>
+    <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <g filter="url(#sketchy)">
+    <path d="M 230 65 Q 450 63 670 66" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 240 71 Q 450 73 660 70" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="450" y="45" text-anchor="middle" font-size="26" font-weight="bold" fill="#0f172a" letter-spacing="1">STACK &amp; QUEUE ARCHITECTURE</text>
+
+  <text x="50" y="120" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">01 // STACK (LIFO: Last In, First Out)</text>
+  <text x="50" y="145" font-size="15" fill="#64748b">Like a stack of plates. You can only interact with the top.</text>
+
+  <g transform="translate(50, 220)">
+    <g filter="url(#sketchy)">
+      <path d="M 60 0 L 60 180 Q 60 200 80 200 L 200 200 Q 220 200 220 180 L 220 0" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <rect x="80" y="140" width="120" height="45" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2.5" transform="rotate(-1, 140, 160)"/>
+      <rect x="80" y="85" width="120" height="45" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2.5" transform="rotate(0.5, 140, 105)"/>
+      
+      <rect x="80" y="30" width="120" height="45" rx="3" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5" transform="rotate(-0.5, 140, 50)"/>
+      
+      <rect x="80" y="-30" width="120" height="45" rx="3" fill="#f8fafc" stroke="#10b981" stroke-width="2.5" stroke-dasharray="6,4" transform="rotate(1, 140, -10)"/>
+
+      <path d="M -10 -25 Q 30 -25 60 -5" fill="none" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-green)" stroke-linecap="round"/>
+      
+      <path d="M 215 15 Q 240 5 270 15" fill="none" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow-red)" stroke-linecap="round"/>
+      
+      <line x1="230" y1="52" x2="270" y2="52" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)" stroke-linecap="round"/>
+      
+      <path d="M 420 -20 Q 640 -25 840 -20 L 838 180 Q 640 185 422 175 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+
+    <g font-size="18" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="140" y="169">C</text>
+      <text x="140" y="114">B</text>
+      <text x="140" y="59" fill="#2563eb">A</text>
+      <text x="140" y="-1" fill="#10b981">X</text>
+    </g>
+
+    <text x="280" y="58" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="start">TOP pointer</text>
+    <text x="-15" y="-35" font-size="16" font-weight="bold" fill="#10b981" text-anchor="start">Push(X)</text>
+    <text x="280" y="10" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="start">Pop() -> A</text>
+
+    <text x="440" y="20" font-size="18" font-weight="bold" fill="#0f172a">Stack Operations (All O(1) Time)</text>
+    
+    <text x="440" y="65" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#2563eb">Push(val):</tspan> Adds a new item to the TOP.</text>
+    <text x="440" y="95" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#ef4444">Pop():</tspan> Removes &amp; returns the TOP item.</text>
+    <text x="440" y="125" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#10b981">Peek():</tspan> Looks at TOP item without removing it.</text>
+    
+    <text x="440" y="155" font-size="14" fill="#64748b"><tspan font-weight="bold">Use Cases:</tspan> Undo buttons, Browser History, Call Stack.</text>
+  </g>
+
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 480 Q 450 475 860 482" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+
+  <text x="50" y="550" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">02 // QUEUE (FIFO: First In, First Out)</text>
+  <text x="50" y="575" font-size="15" fill="#64748b">Like waiting in a line. Enter at the back, leave from the front.</text>
+
+  <g transform="translate(50, 650)">
+    <g filter="url(#sketchy)">
+      <line x1="80" y1="-5" x2="360" y2="-5" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+      <line x1="80" y1="65" x2="360" y2="65" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+      
+      <rect x="290" y="5" width="50" height="50" rx="3" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5" transform="rotate(1, 315, 30)"/>
+      <rect x="220" y="5" width="50" height="50" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2.5" transform="rotate(-0.5, 245, 30)"/>
+      <rect x="150" y="5" width="50" height="50" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="2.5" transform="rotate(0.5, 175, 30)"/>
+      
+      <rect x="15" y="5" width="50" height="50" rx="3" fill="#f8fafc" stroke="#10b981" stroke-width="2.5" stroke-dasharray="6,4" transform="rotate(-1, 40, 30)"/>
+      <rect x="420" y="5" width="50" height="50" rx="3" fill="#fee2e2" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6,4" transform="rotate(1, 445, 30)"/>
+
+      <path d="M -30 30 L -5 30" fill="none" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-green)" stroke-linecap="round"/>
+      <path d="M 370 30 L 400 30" fill="none" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow-red)" stroke-linecap="round"/>
+      
+      <line x1="175" y1="85" x2="175" y2="115" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)" stroke-linecap="round"/>
+      <line x1="315" y1="85" x2="315" y2="115" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)" stroke-linecap="round"/>
+
+      <path d="M 490 -20 Q 670 -25 860 -20 L 858 180 Q 670 185 492 175 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+
+    <g font-size="18" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="315" y="36" fill="#2563eb">1</text>
+      <text x="245" y="36">2</text>
+      <text x="175" y="36">3</text>
+      
+      <text x="40" y="36" fill="#10b981">4</text>
+      <text x="445" y="36" fill="#ef4444">1</text>
+    </g>
+
+    <text x="175" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#334155">TAIL (Back)</text>
+    <text x="315" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#2563eb">HEAD (Front)</text>
+    
+    <text x="-35" y="0" font-size="16" font-weight="bold" fill="#10b981" text-anchor="start">Enqueue(4)</text>
+    <text x="400" y="10" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="start">Dequeue()</text>
+
+    <text x="510" y="20" font-size="18" font-weight="bold" fill="#0f172a">Queue Operations (All O(1) Time)</text>
+    
+    <text x="510" y="65" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#10b981">Enqueue(val):</tspan> Adds item to the TAIL (back).</text>
+    <text x="510" y="95" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#ef4444">Dequeue():</tspan> Removes item from HEAD (front).</text>
+    <text x="510" y="125" font-size="15" fill="#334155"><tspan font-weight="bold" fill="#2563eb">Peek():</tspan> Looks at the HEAD item.</text>
+    
+    <text x="510" y="155" font-size="14" fill="#64748b"><tspan font-weight="bold">Use Cases:</tspan> Printer queues, Task scheduling, BFS.</text>
+  </g>
+
+</svg>

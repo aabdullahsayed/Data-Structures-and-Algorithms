@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', 'Segoe Print', cursive, sans-serif;">
+  <defs>
+    <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <g filter="url(#sketchy)">
+    <path d="M 300 65 Q 450 63 600 66" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 310 71 Q 450 73 590 70" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="450" y="45" text-anchor="middle" font-size="26" font-weight="bold" fill="#0f172a" letter-spacing="1">TREE TOPOLOGIES</text>
+
+  <text x="50" y="120" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">01 // GENERAL TREE</text>
+  <text x="50" y="145" font-size="15" fill="#64748b">Nodes can have any number of children. Purely hierarchical.</text>
+
+  <g transform="translate(0, 0)">
+    <g filter="url(#sketchy)" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 450 175 Q 375 200 300 230" />
+      <path d="M 450 175 Q 450 200 450 230" />
+      <path d="M 450 175 Q 525 200 600 230" />
+      
+      <path d="M 450 255 Q 410 280 370 310" />
+      <path d="M 450 255 Q 450 280 450 310" />
+      <path d="M 450 255 Q 490 280 530 310" />
+      
+      <path d="M 625 230 Q 660 230 650 200" stroke="#2563eb" stroke-dasharray="6,5" marker-end="url(#arrow-blue)"/>
+      <path d="M 350 310 Q 320 310 320 280" stroke="#2563eb" stroke-dasharray="6,5" marker-end="url(#arrow-blue)"/>
+    </g>
+
+    <g filter="url(#sketchy)" fill="#ffffff" stroke="#1e293b" stroke-width="2.5">
+      <circle cx="450" cy="160" r="22"/>
+      <circle cx="300" cy="240" r="22"/>
+      <circle cx="450" cy="240" r="22"/>
+      <circle cx="600" cy="240" r="22"/>
+      <circle cx="370" cy="320" r="22"/>
+      <circle cx="450" cy="320" r="22"/>
+      <circle cx="530" cy="320" r="22"/>
+    </g>
+
+    <g font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="450" y="166">50</text>
+      <text x="300" y="246">30</text>
+      <text x="450" y="246">70</text>
+      <text x="600" y="246">20</text>
+      <text x="370" y="326">40</text>
+      <text x="450" y="326">60</text>
+      <text x="530" y="326">80</text>
+    </g>
+
+    <text x="660" y="190" font-size="14" font-weight="bold" fill="#2563eb">Root has 3 children</text>
+    <text x="210" y="275" font-size="14" font-weight="bold" fill="#2563eb">Node '70' has 3 children</text>
+  </g>
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 380 Q 450 375 860 382" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+  <text x="50" y="430" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">02 // BINARY TREE</text>
+  <text x="50" y="455" font-size="15" fill="#64748b">Strictly maximum of 2 children per node (Left &amp; Right). No sorting rules.</text>
+
+  <g transform="translate(0, 320)">
+    <g filter="url(#sketchy)" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 450 175 Q 390 200 330 230" />
+      <path d="M 450 175 Q 510 200 570 230" />
+      
+      <path d="M 330 255 Q 290 280 250 310" />
+      <path d="M 330 255 Q 370 280 410 310" />
+      
+      <path d="M 570 255 Q 530 280 490 310" />
+      <path d="M 570 255 Q 610 280 650 310" />
+
+      <path d="M 310 230 Q 330 190 410 170" stroke="#ef4444" stroke-dasharray="6,5" marker-end="url(#arrow-red)"/>
+      <path d="M 680 310 Q 700 280 600 240" stroke="#ef4444" stroke-dasharray="6,5" marker-end="url(#arrow-red)"/>
+    </g>
+
+    <g filter="url(#sketchy)" fill="#ffffff" stroke="#1e293b" stroke-width="2.5">
+      <circle cx="450" cy="160" r="22"/>
+      <circle cx="330" cy="240" r="22"/>
+      <circle cx="570" cy="240" r="22"/>
+      
+      <circle cx="250" cy="320" r="22"/>
+      <circle cx="410" cy="320" r="22"/>
+      <circle cx="490" cy="320" r="22"/>
+      <circle cx="650" cy="320" r="22"/>
+    </g>
+
+    <g font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="450" y="166">50</text>
+      <text x="330" y="246">70</text>
+      <text x="570" y="246">20</text>
+      
+      <text x="250" y="326">80</text>
+      <text x="410" y="326">30</text>
+      <text x="490" y="326">60</text>
+      <text x="650" y="326">40</text>
+    </g>
+
+    <text x="250" y="160" font-size="14" font-weight="bold" fill="#ef4444">70 > 50?</text>
+    <text x="250" y="180" font-size="14" font-weight="bold" fill="#ef4444">Allowed here!</text>
+    
+    <text x="680" y="270" font-size="14" font-weight="bold" fill="#ef4444">Random placement.</text>
+    <text x="680" y="290" font-size="14" font-weight="bold" fill="#ef4444">No order guarantees.</text>
+  </g>
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 700 Q 450 695 860 702" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+  <text x="50" y="750" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">03 // BINARY SEARCH TREE (BST)</text>
+  <text x="50" y="775" font-size="15" fill="#64748b">Strict Sorting Rule: Left Subtree &lt; Parent &lt; Right Subtree. (O(log N) operations)</text>
+
+  <g transform="translate(0, 640)">
+    <g filter="url(#sketchy)" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 450 175 Q 390 200 330 230" stroke="#10b981"/>
+      <path d="M 450 175 Q 510 200 570 230" stroke="#2563eb"/>
+      
+      <path d="M 330 255 Q 290 280 250 310" />
+      <path d="M 330 255 Q 370 280 410 310" />
+      
+      <path d="M 570 255 Q 530 280 490 310" />
+      <path d="M 570 255 Q 610 280 650 310" />
+      
+      <path d="M 440 210 Q 300 240 220 340" stroke="#10b981" stroke-dasharray="8,6" stroke-width="2"/>
+      <path d="M 460 210 Q 600 240 680 340" stroke="#2563eb" stroke-dasharray="8,6" stroke-width="2"/>
+    </g>
+
+    <g filter="url(#sketchy)" fill="#ffffff" stroke="#1e293b" stroke-width="2.5">
+      <circle cx="450" cy="160" r="22" stroke-width="3"/> <circle cx="330" cy="240" r="22" stroke="#10b981"/>
+      <circle cx="570" cy="240" r="22" stroke="#2563eb"/>
+      
+      <circle cx="250" cy="320" r="22" stroke="#10b981"/>
+      <circle cx="410" cy="320" r="22" stroke="#10b981"/>
+      <circle cx="490" cy="320" r="22" stroke="#2563eb"/>
+      <circle cx="650" cy="320" r="22" stroke="#2563eb"/>
+    </g>
+
+    <g font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      <text x="450" y="166">50</text>
+      
+      <text x="330" y="246">30</text>
+      <text x="570" y="246">70</text>
+      
+      <text x="250" y="326">20</text>
+      <text x="410" y="326">40</text>
+      
+      <text x="490" y="326">60</text>
+      <text x="650" y="326">80</text>
+    </g>
+
+    <text x="310" y="190" font-size="16" font-weight="bold" fill="#10b981" text-anchor="end">EVERY node here</text>
+    <text x="310" y="210" font-size="16" font-weight="bold" fill="#10b981" text-anchor="end">is strictly &lt; 50</text>
+
+    <text x="590" y="190" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="start">EVERY node here</text>
+    <text x="590" y="210" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="start">is strictly > 50</text>
+    
+    <text x="330" y="365" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">In-order Traversal yields: [20, 30, 40, 50, 60, 70, 80]</text>
+  </g>
+
+</svg>
