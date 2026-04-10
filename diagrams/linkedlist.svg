@@ -1,7 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 950" width="100%" height="100%" style="background-color: #ffffff; font-family: system-ui, -apple-system, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', 'Segoe Print', cursive, sans-serif;">
   <defs>
+    <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
     <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b" />
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
     </marker>
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
@@ -14,176 +19,196 @@
     </marker>
   </defs>
 
-  <text x="450" y="45" text-anchor="middle" font-size="22" font-weight="600" fill="#0f172a" letter-spacing="1">LINKED LIST ARCHITECTURE &amp; MECHANICS</text>
-  <line x1="200" y1="65" x2="700" y2="65" stroke="#e2e8f0" stroke-width="2"/>
-
-  <text x="50" y="110" font-size="14" font-weight="600" fill="#475569" letter-spacing="1.5">01 // STRUCTURAL TOPOLOGIES</text>
-
-  <g transform="translate(50, 140)">
-    <text x="0" y="-10" font-size="13" font-weight="500" fill="#334155">Singly Linked List (One-way Traversal)</text>
-    
-    <g stroke="#334155" stroke-width="1.5">
-      <rect x="0" y="5" width="60" height="30" rx="2" fill="#ffffff"/>
-      <rect x="40" y="5" width="20" height="30" fill="#f1f5f9"/>
-      
-      <rect x="120" y="5" width="60" height="30" rx="2" fill="#ffffff"/>
-      <rect x="160" y="5" width="20" height="30" fill="#f1f5f9"/>
-      
-      <rect x="240" y="5" width="60" height="30" rx="2" fill="#ffffff"/>
-      <rect x="280" y="5" width="20" height="30" fill="#f1f5f9"/>
-    </g>
-    
-    <text x="20" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">10</text>
-    <line x1="60" y1="20" x2="115" y2="20" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="140" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">20</text>
-    <line x1="180" y1="20" x2="235" y2="20" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="260" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">30</text>
-    <line x1="300" y1="20" x2="355" y2="20" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="375" y="25" text-anchor="middle" font-size="12" font-family="monospace" fill="#94a3b8">NULL</text>
+  <g filter="url(#sketchy)">
+    <path d="M 190 65 Q 450 63 710 66" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 195 71 Q 450 73 705 70" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
   </g>
+  <text x="450" y="45" text-anchor="middle" font-size="24" font-weight="bold" fill="#0f172a" letter-spacing="1">LINKED LIST ARCHITECTURE &amp; MECHANICS</text>
 
-  <g transform="translate(50, 230)">
-    <text x="0" y="-10" font-size="13" font-weight="500" fill="#334155">Doubly Linked List (Two-way Traversal, O(1) Prev Access)</text>
+  <text x="50" y="120" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">01 // STRUCTURAL TOPOLOGIES</text>
+
+  <g transform="translate(50, 160)">
+    <text x="0" y="-10" font-size="15" font-weight="bold" fill="#1e293b">Singly Linked List (One-way Traversal)</text>
     
-    <g stroke="#334155" stroke-width="1.5">
-      <rect x="0" y="5" width="80" height="30" rx="2" fill="#ffffff"/>
-      <rect x="0" y="5" width="20" height="30" fill="#f1f5f9" rx="2"/>
-      <rect x="60" y="5" width="20" height="30" fill="#f1f5f9" rx="2"/>
-      
-      <rect x="140" y="5" width="80" height="30" rx="2" fill="#ffffff"/>
-      <rect x="140" y="5" width="20" height="30" fill="#f1f5f9" rx="2"/>
-      <rect x="200" y="5" width="20" height="30" fill="#f1f5f9" rx="2"/>
-      
-      <rect x="280" y="5" width="80" height="30" rx="2" fill="#ffffff"/>
-      <rect x="280" y="5" width="20" height="30" fill="#f1f5f9" rx="2"/>
-      <rect x="340" y="5" width="20" height="30" fill="#f1f5f9" rx="2"/>
-    </g>
-    
-    <text x="-25" y="25" text-anchor="middle" font-size="12" font-family="monospace" fill="#94a3b8">NULL</text>
-    <line x1="0" y1="25" x2="-10" y2="25" stroke="#64748b" stroke-width="1.5"/>
-
-    <text x="40" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">A</text>
-    <line x1="80" y1="15" x2="135" y2="15" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/> <line x1="140" y1="25" x2="85" y2="25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/> <text x="180" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">B</text>
-    <line x1="220" y1="15" x2="275" y2="15" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    <line x1="280" y1="25" x2="225" y2="25" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="320" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">C</text>
-    <line x1="360" y1="20" x2="415" y2="20" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="435" y="25" text-anchor="middle" font-size="12" font-family="monospace" fill="#94a3b8">NULL</text>
-  </g>
-
-  <g transform="translate(50, 320)">
-    <text x="0" y="-10" font-size="13" font-weight="500" fill="#334155">Circular Linked List (Tail points to Head)</text>
-    
-    <g stroke="#334155" stroke-width="1.5">
-      <rect x="0" y="5" width="60" height="30" rx="2" fill="#ffffff"/>
-      <rect x="40" y="5" width="20" height="30" fill="#f1f5f9"/>
-      
-      <rect x="120" y="5" width="60" height="30" rx="2" fill="#ffffff"/>
-      <rect x="160" y="5" width="20" height="30" fill="#f1f5f9"/>
-      
-      <rect x="240" y="5" width="60" height="30" rx="2" fill="#ffffff"/>
-      <rect x="280" y="5" width="20" height="30" fill="#f1f5f9"/>
-    </g>
-    
-    <text x="20" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">H1</text>
-    <line x1="60" y1="20" x2="115" y2="20" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="140" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">H2</text>
-    <line x1="180" y1="20" x2="235" y2="20" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow-slate)"/>
-    
-    <text x="260" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">H3</text>
-    
-    <path d="M 300 20 L 330 20 L 330 55 L -20 55 L -20 20 L -5 20" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
-    <text x="150" y="70" text-anchor="middle" font-size="11" font-weight="600" fill="#2563eb">Tail.next = Head</text>
-  </g>
-
-  <line x1="50" y1="420" x2="850" y2="420" stroke="#f1f5f9" stroke-width="2"/>
-
-  <g transform="translate(50, 470)">
-    <text x="0" y="-10" font-size="14" font-weight="600" fill="#475569" letter-spacing="1.5">02 // DELETION MECHANICS (POINTER BYPASS)</text>
-    <text x="0" y="10" font-size="12" fill="#64748b">Memory is managed by Garbage Collector (Java) once references are severed.</text>
-
-    <g transform="translate(0, 50)">
-      <rect x="0" y="0" width="70" height="36" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-      <rect x="50" y="0" width="20" height="36" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
-      <text x="25" y="23" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">Val: 5</text>
-      <text x="35" y="-10" text-anchor="middle" font-size="12" font-family="monospace" fill="#0f172a">prevNode</text>
-    </g>
-
-    <g transform="translate(160, 50)">
-      <rect x="0" y="0" width="70" height="36" rx="3" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4"/>
-      <rect x="50" y="0" width="20" height="36" fill="#fecaca" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4"/>
-      <text x="25" y="23" text-anchor="middle" font-size="14" font-weight="600" fill="#ef4444" text-decoration="line-through">Val: 9</text>
-      <text x="35" y="-10" text-anchor="middle" font-size="12" font-family="monospace" fill="#ef4444">targetNode</text>
-    </g>
-
-    <g transform="translate(320, 50)">
-      <rect x="0" y="0" width="70" height="36" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-      <rect x="50" y="0" width="20" height="36" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
-      <text x="25" y="23" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">Val: 2</text>
-      <text x="35" y="-10" text-anchor="middle" font-size="12" font-family="monospace" fill="#0f172a">targetNode.next</text>
-    </g>
-
-    <line x1="70" y1="68" x2="150" y2="68" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,3"/>
-    <line x1="100" y1="60" x2="120" y2="76" stroke="#ef4444" stroke-width="2"/> <line x1="120" y1="60" x2="100" y2="76" stroke="#ef4444" stroke-width="2"/>
-
-    <path d="M 60 50 Q 195 0 315 55" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
-    
-    <rect x="450" y="30" width="380" height="80" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-    <text x="470" y="55" font-size="13" font-family="monospace" fill="#0f172a"><tspan fill="#64748b">// The "Skip" Maneuver (O(1) logic)</tspan></text>
-    <text x="470" y="75" font-size="13" font-family="monospace" font-weight="bold" fill="#2563eb">prevNode.next = targetNode.next;</text>
-    <text x="470" y="95" font-size="13" font-family="monospace" fill="#0f172a">targetNode.next = null; <tspan fill="#64748b">// Optional cleanup</tspan></text>
-  </g>
-
-  <line x1="50" y1="640" x2="850" y2="640" stroke="#f1f5f9" stroke-width="2"/>
-
-  <g transform="translate(50, 690)">
-    <text x="0" y="-10" font-size="14" font-weight="600" fill="#475569" letter-spacing="1.5">03 // THE RUNNER TECHNIQUE (FLOYD'S ALGORITHM)</text>
-    <text x="0" y="10" font-size="12" fill="#64748b">Using two pointers moving at different speeds to find the middle or detect cycles.</text>
-
-    <g transform="translate(0, 80)">
-      <g stroke="#334155" stroke-width="1.5">
-        <rect x="0" y="0" width="50" height="30" rx="2" fill="#ffffff"/>
-        <text x="25" y="20" text-anchor="middle" font-size="13" fill="#0f172a">1</text>
-        <line x1="50" y1="15" x2="85" y2="15" stroke="#64748b" marker-end="url(#arrow-slate)"/>
+    <g filter="url(#sketchy)">
+      <g stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="0" y="5" width="60" height="30" rx="3" fill="#ffffff" transform="rotate(0.5, 30, 20)"/>
+        <line x1="40" y1="5" x2="40" y2="35" transform="rotate(0.5, 40, 20)"/>
         
-        <rect x="90" y="0" width="50" height="30" rx="2" fill="#ffffff"/>
-        <text x="115" y="20" text-anchor="middle" font-size="13" fill="#0f172a">2</text>
-        <line x1="140" y1="15" x2="175" y2="15" stroke="#64748b" marker-end="url(#arrow-slate)"/>
+        <rect x="120" y="5" width="60" height="30" rx="3" fill="#ffffff" transform="rotate(-0.5, 150, 20)"/>
+        <line x1="160" y1="5" x2="160" y2="35" transform="rotate(-0.5, 160, 20)"/>
         
-        <rect x="180" y="0" width="50" height="30" rx="2" fill="#f8fafc" stroke="#2563eb" stroke-width="2"/>
-        <text x="205" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#2563eb">3</text>
-        <line x1="230" y1="15" x2="265" y2="15" stroke="#64748b" marker-end="url(#arrow-slate)"/>
-        
-        <rect x="270" y="0" width="50" height="30" rx="2" fill="#ffffff"/>
-        <text x="295" y="20" text-anchor="middle" font-size="13" fill="#0f172a">4</text>
-        <line x1="320" y1="15" x2="355" y2="15" stroke="#64748b" marker-end="url(#arrow-slate)"/>
-        
-        <rect x="360" y="0" width="50" height="30" rx="2" fill="#ffffff"/>
-        <text x="385" y="20" text-anchor="middle" font-size="13" fill="#0f172a">5</text>
-        <line x1="410" y1="15" x2="445" y2="15" stroke="#64748b" marker-end="url(#arrow-slate)"/>
-        <text x="465" y="20" text-anchor="middle" font-size="12" font-family="monospace" fill="#94a3b8">NULL</text>
+        <rect x="240" y="5" width="60" height="30" rx="3" fill="#ffffff" transform="rotate(1, 270, 20)"/>
+        <line x1="280" y1="5" x2="280" y2="35" transform="rotate(1, 280, 20)"/>
       </g>
+      <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow-slate)">
+        <path d="M 60 20 Q 87 18 115 20" />
+        <path d="M 180 20 Q 207 22 235 20" />
+        <path d="M 300 20 Q 327 18 355 20" />
+      </g>
+    </g>
 
-      <path d="M 25 -30 L 25 -10 L 205 -10 L 205 -5" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
-      <rect x="-15" y="-45" width="80" height="20" rx="2" fill="#e0f2fe"/>
-      <text x="25" y="-31" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563eb">Slow (1x)</text>
+    <text x="20" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">10</text>
+    <text x="140" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">20</text>
+    <text x="260" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">30</text>
+    <text x="375" y="26" text-anchor="middle" font-size="15" fill="#64748b">NULL</text>
+  </g>
 
-      <path d="M 25 60 L 25 40 L 385 40 L 385 35" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-green)"/>
-      <rect x="-15" y="55" width="80" height="20" rx="2" fill="#d1fae5"/>
-      <text x="25" y="69" text-anchor="middle" font-size="11" font-weight="bold" fill="#059669">Fast (2x)</text>
+  <g transform="translate(50, 270)">
+    <text x="0" y="-10" font-size="15" font-weight="bold" fill="#1e293b">Doubly Linked List (Two-way Traversal, O(1) Prev Access)</text>
+    
+    <g filter="url(#sketchy)">
+      <g stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="0" y="5" width="80" height="30" rx="3" fill="#ffffff" transform="rotate(-0.5, 40, 20)"/>
+        <line x1="20" y1="5" x2="20" y2="35" transform="rotate(-0.5, 20, 20)"/>
+        <line x1="60" y1="5" x2="60" y2="35" transform="rotate(-0.5, 60, 20)"/>
+        
+        <rect x="140" y="5" width="80" height="30" rx="3" fill="#ffffff" transform="rotate(0.5, 180, 20)"/>
+        <line x1="160" y1="5" x2="160" y2="35" transform="rotate(0.5, 160, 20)"/>
+        <line x1="200" y1="5" x2="200" y2="35" transform="rotate(0.5, 200, 20)"/>
+        
+        <rect x="280" y="5" width="80" height="30" rx="3" fill="#ffffff" transform="rotate(-1, 320, 20)"/>
+        <line x1="300" y1="5" x2="300" y2="35" transform="rotate(-1, 300, 20)"/>
+        <line x1="340" y1="5" x2="340" y2="35" transform="rotate(-1, 340, 20)"/>
+      </g>
+      <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow-slate)">
+        <path d="M 0 25 Q -5 26 -12 25" />
+        <path d="M 80 15 Q 107 14 135 15" />
+        <path d="M 140 25 Q 112 26 85 25" />
+        <path d="M 220 15 Q 247 14 275 15" />
+        <path d="M 280 25 Q 252 26 225 25" />
+        <path d="M 360 20 Q 387 18 415 20" />
+      </g>
+    </g>
+
+    <text x="-25" y="26" text-anchor="middle" font-size="15" fill="#64748b">NULL</text>
+    <text x="40" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">A</text>
+    <text x="180" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">B</text>
+    <text x="320" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">C</text>
+    <text x="435" y="26" text-anchor="middle" font-size="15" fill="#64748b">NULL</text>
+  </g>
+
+  <g transform="translate(50, 390)">
+    <text x="0" y="-10" font-size="15" font-weight="bold" fill="#1e293b">Circular Linked List (Tail points to Head)</text>
+    
+    <g filter="url(#sketchy)">
+      <g stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="0" y="5" width="60" height="30" rx="3" fill="#ffffff" transform="rotate(0.5, 30, 20)"/>
+        <line x1="40" y1="5" x2="40" y2="35" transform="rotate(0.5, 40, 20)"/>
+        
+        <rect x="120" y="5" width="60" height="30" rx="3" fill="#ffffff" transform="rotate(-0.5, 150, 20)"/>
+        <line x1="160" y1="5" x2="160" y2="35" transform="rotate(-0.5, 160, 20)"/>
+        
+        <rect x="240" y="5" width="60" height="30" rx="3" fill="#ffffff" transform="rotate(0.5, 270, 20)"/>
+        <line x1="280" y1="5" x2="280" y2="35" transform="rotate(0.5, 280, 20)"/>
+      </g>
+      <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow-slate)">
+        <path d="M 60 20 Q 87 18 115 20" />
+        <path d="M 180 20 Q 207 22 235 20" />
+      </g>
+      <path d="M 300 20 Q 340 20 340 45 Q 340 75 150 75 Q -30 75 -30 45 Q -30 20 -5 20" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)" stroke-linecap="round"/>
+    </g>
+
+    <text x="20" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">H1</text>
+    <text x="140" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">H2</text>
+    <text x="260" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">H3</text>
+    <text x="150" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#2563eb">Tail.next = Head</text>
+  </g>
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 530 Q 450 525 860 532" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(50, 580)">
+    <text x="0" y="-10" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">02 // DELETION MECHANICS (POINTER BYPASS)</text>
+    <text x="0" y="10" font-size="14" fill="#475569">Memory is managed by Garbage Collector (Java) once references are severed.</text>
+
+    <g filter="url(#sketchy)">
+      <g transform="translate(0, 60)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="0" y="0" width="70" height="36" rx="4" fill="#ffffff" stroke="#1e293b" transform="rotate(-1, 35, 18)"/>
+        <line x1="50" y1="0" x2="50" y2="36" stroke="#1e293b" transform="rotate(-1, 50, 18)"/>
+        
+        <rect x="160" y="0" width="70" height="36" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-dasharray="6,4" transform="rotate(1, 195, 18)"/>
+        <line x1="210" y1="0" x2="210" y2="36" stroke="#ef4444" stroke-dasharray="6,4" transform="rotate(1, 210, 18)"/>
+        
+        <rect x="320" y="0" width="70" height="36" rx="4" fill="#ffffff" stroke="#1e293b" transform="rotate(0.5, 355, 18)"/>
+        <line x1="370" y1="0" x2="370" y2="36" stroke="#1e293b" transform="rotate(0.5, 370, 18)"/>
+
+        <path d="M 70 18 Q 110 16 150 18" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+        <path d="M 100 10 L 120 26 M 120 10 L 100 26" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+
+        <path d="M 60 45 Q 190 85 315 45" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+        
+        <path d="M 450 10 Q 640 5 830 10 L 828 100 Q 640 105 452 98 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g transform="translate(0, 60)">
+      <text x="25" y="23" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">Val: 5</text>
+      <text x="35" y="-12" text-anchor="middle" font-size="14" fill="#0f172a">prevNode</text>
       
-      <text x="530" y="-10" font-size="13" font-weight="600" fill="#0f172a">Finding the Middle Element:</text>
-      <text x="530" y="15" font-size="13" fill="#475569">While <tspan font-family="monospace" font-weight="bold" fill="#059669">fast != null &amp;&amp; fast.next != null</tspan></text>
-      <text x="550" y="35" font-size="13" font-family="monospace" fill="#2563eb">slow = slow.next;</text>
-      <text x="550" y="55" font-size="13" font-family="monospace" fill="#059669">fast = fast.next.next;</text>
-      <text x="530" y="80" font-size="13" fill="#475569">When <tspan font-weight="bold">Fast</tspan> reaches the end, <tspan font-weight="bold">Slow</tspan> is exactly</text>
-      <text x="530" y="100" font-size="13" fill="#475569">at the middle node (Node 3).</text>
+      <text x="185" y="23" text-anchor="middle" font-size="15" font-weight="bold" fill="#ef4444">Val: 9</text>
+      <line x1="165" y1="18" x2="205" y2="18" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="195" y="-12" text-anchor="middle" font-size="14" fill="#ef4444">targetNode</text>
+      
+      <text x="345" y="23" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">Val: 2</text>
+      <text x="355" y="-12" text-anchor="middle" font-size="14" fill="#0f172a">targetNode.next</text>
+    </g>
+
+    <text x="470" y="100" font-size="14" font-weight="bold" fill="#64748b">// The "Skip" Maneuver (O(1) logic)</text>
+    <text x="470" y="125" font-size="15" font-weight="bold" fill="#2563eb">prevNode.next = targetNode.next;</text>
+    <text x="470" y="148" font-size="14" font-weight="bold" fill="#0f172a">targetNode.next = null; <tspan fill="#64748b">// Optional cleanup</tspan></text>
+  </g>
+
+  <g filter="url(#sketchy)">
+    <path d="M 40 760 Q 450 755 860 762" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(50, 810)">
+    <text x="0" y="-10" font-size="16" font-weight="bold" fill="#334155" letter-spacing="1">03 // THE RUNNER TECHNIQUE (FLOYD'S ALGORITHM)</text>
+    <text x="0" y="10" font-size="14" fill="#475569">Using two pointers moving at different speeds to find the middle or detect cycles.</text>
+
+    <g filter="url(#sketchy)">
+      <g transform="translate(0, 100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="0" y="0" width="50" height="30" rx="3" fill="#ffffff" stroke="#1e293b" transform="rotate(-1, 25, 15)"/>
+        <rect x="90" y="0" width="50" height="30" rx="3" fill="#ffffff" stroke="#1e293b" transform="rotate(1, 115, 15)"/>
+        <rect x="180" y="0" width="50" height="30" rx="3" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5" transform="rotate(-0.5, 205, 15)"/>
+        <rect x="270" y="0" width="50" height="30" rx="3" fill="#ffffff" stroke="#1e293b" transform="rotate(0.5, 295, 15)"/>
+        <rect x="360" y="0" width="50" height="30" rx="3" fill="#ffffff" stroke="#1e293b" transform="rotate(-1, 385, 15)"/>
+        
+        <g fill="none" stroke="#475569" marker-end="url(#arrow-slate)">
+          <path d="M 50 15 Q 70 14 85 15"/>
+          <path d="M 140 15 Q 160 16 175 15"/>
+          <path d="M 230 15 Q 250 14 265 15"/>
+          <path d="M 320 15 Q 340 16 355 15"/>
+          <path d="M 410 15 Q 427 14 445 15"/>
+        </g>
+
+        <rect x="-15" y="-55" width="80" height="25" rx="3" fill="#e0f2fe" stroke="#38bdf8"/>
+        <path d="M 25 -30 Q 25 -10 115 -10 Q 205 -10 205 -5" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+        
+        <rect x="-15" y="55" width="80" height="25" rx="3" fill="#d1fae5" stroke="#34d399"/>
+        <path d="M 25 55 Q 25 40 205 40 Q 385 40 385 35" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+      </g>
+    </g>
+
+    <g transform="translate(0, 100)">
+      <text x="25" y="21" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">1</text>
+      <text x="115" y="21" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">2</text>
+      <text x="205" y="21" text-anchor="middle" font-size="16" font-weight="bold" fill="#2563eb">3</text>
+      <text x="295" y="21" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">4</text>
+      <text x="385" y="21" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">5</text>
+      <text x="475" y="21" text-anchor="middle" font-size="15" fill="#64748b">NULL</text>
+
+      <text x="25" y="-38" text-anchor="middle" font-size="14" font-weight="bold" fill="#2563eb">Slow (1x)</text>
+      <text x="25" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#059669">Fast (2x)</text>
+      
+      <text x="530" y="0" font-size="16" font-weight="bold" fill="#0f172a">Finding the Middle Element:</text>
+      <text x="530" y="25" font-size="15" fill="#475569">While <tspan font-weight="bold" fill="#059669">fast != null &amp;&amp; fast.next != null</tspan></text>
+      <text x="550" y="55" font-size="16" font-weight="bold" fill="#2563eb">slow = slow.next;</text>
+      <text x="550" y="80" font-size="16" font-weight="bold" fill="#059669">fast = fast.next.next;</text>
+      <text x="530" y="115" font-size="15" fill="#475569">When <tspan font-weight="bold" fill="#0f172a">Fast</tspan> reaches the end, <tspan font-weight="bold" fill="#0f172a">Slow</tspan> is exactly</text>
+      <text x="530" y="135" font-size="15" fill="#475569">at the middle node (Node 3).</text>
     </g>
   </g>
 
