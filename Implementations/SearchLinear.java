@@ -4,8 +4,8 @@ public class SearchLinear {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,2,3,4,5,6,7,8};
-        int target = 7;
+        int[] arr = {12,45,89,23,67,34,90,15};
+        int target = 23;
 
         LinearSearch(arr, target);
     }
@@ -15,7 +15,7 @@ public class SearchLinear {
         for (int i = 0; i < arr.length; i++) {
 
             if (arr[i] == target) {
-                System.out.println("Found at " + i + " index");
+                System.out.println("Match Found at Index: " + i +" ");
             }
         }
     }
