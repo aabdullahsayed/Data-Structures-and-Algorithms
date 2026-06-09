@@ -1,4 +1,3 @@
-
 ### How Memory Works
 
 * **The Analogy:** Computer memory is like a giant chest of drawers where each drawer has a specific address.
@@ -25,3 +24,13 @@
 
 * **Arrays:** Faster at reads because they support random access.
 * **Linked Lists:** Faster at insertions and deletions (especially in the middle or at the beginning/end) because they don't require shifting elements in memory.
+
+### Run Times Table
+
+| Operation | Arrays | Lists |
+| --- | --- | --- |
+| **Reading** | $O(1)$ | $O(n)$ |
+| **Insertion** | $O(n)$ | $O(1)$ |
+| **Deletion** | $O(n)$ | $O(1)$ |
+
+---
