@@ -13,7 +13,18 @@ Big O is a mathematical way to describe how the performance of an algorithm chan
 | Goal: Make the program faster.                                       | Goal: Use less memory.                                                           |
 
 
-## Common Complexitiesa
+## Common Complexities
+
+| Complexity | Meaning      |
+| ---------- | ------------ |
+| O(1)       | Constant     |
+| O(log n)   | Logarithmic  |
+| O(n)       | Linear       |
+| O(n log n) | Linearithmic |
+| O(n²)      | Quadratic    |
+| O(2ⁿ)      | Exponential  |
+| O(n!)      | Factorial    |
+
 
 ## Rules for analyzing loops
 
