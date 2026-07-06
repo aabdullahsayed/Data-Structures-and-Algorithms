@@ -56,7 +56,7 @@ Big O is a mathematical way to describe how the performance of an algorithm chan
 
 ---
 
-## Easy Way to Remember
+### Easy Way to Remember
 
 | Data Structure | Remember |
 |----------------|----------|
@@ -87,9 +87,278 @@ Big O is a mathematical way to describe how the performance of an algorithm chan
 
 ## Complexity of common algorithm
 
+| Algorithm | Best Case | Average Case | Worst Case | Space Complexity |
+|------------|:---------:|:------------:|:----------:|:----------------:|
+| Linear Search | **O(1)** | **O(n)** | **O(n)** | **O(1)** |
+| Binary Search | **O(1)** | **O(log n)** | **O(log n)** | **O(1)** |
+| Bubble Sort | **O(n)** | **O(n²)** | **O(n²)** | **O(1)** |
+| Selection Sort | **O(n²)** | **O(n²)** | **O(n²)** | **O(1)** |
+| Insertion Sort | **O(n)** | **O(n²)** | **O(n²)** | **O(1)** |
+| Merge Sort | **O(n log n)** | **O(n log n)** | **O(n log n)** | **O(n)** |
+| Quick Sort | **O(n log n)** | **O(n log n)** | **O(n²)** | **O(log n)** |
+| Heap Sort | **O(n log n)** | **O(n log n)** | **O(n log n)** | **O(1)** |
+| Counting Sort | **O(n + k)** | **O(n + k)** | **O(n + k)** | **O(n + k)** |
+| BFS (Breadth-First Search) | **O(V + E)** | **O(V + E)** | **O(V + E)** | **O(V)** |
+| DFS (Depth-First Search) | **O(V + E)** | **O(V + E)** | **O(V + E)** | **O(V)** |
+| Dijkstra (Priority Queue) | **O((V + E) log V)** | **O((V + E) log V)** | **O((V + E) log V)** | **O(V)** |
 
+> **Legend**
+>
+> - `n` = Number of elements
+> - `V` = Number of vertices (nodes)
+> - `E` = Number of edges
+> - `k` = Range of input values (used in Counting Sort)
+
+---
+
+### Easy Way to Remember
+
+| Algorithm | Memory Trick |
+|------------|--------------|
+| Linear Search | Check one by one |
+| Binary Search | Cut the search space in half |
+| Bubble Sort | Biggest element "bubbles" to the end |
+| Selection Sort | Find the smallest each time |
+| Insertion Sort | Insert each element into the correct position |
+| Merge Sort | Divide → Sort → Merge |
+| Quick Sort | Choose a pivot and partition |
+| Heap Sort | Use a heap (priority queue) |
+| BFS | Explore level by level |
+| DFS | Go as deep as possible before backtracking |
+| Dijkstra | Find the shortest path |
+
+---
+
+### Interview Cheat Sheet
+
+| Problem Type | Common Algorithm | Time Complexity |
+|--------------|------------------|-----------------|
+| Search in an unsorted array | Linear Search | **O(n)** |
+| Search in a sorted array | Binary Search | **O(log n)** |
+| Fast general-purpose sorting | Merge Sort | **O(n log n)** |
+| In-place fast sorting | Quick Sort (Average) | **O(n log n)** |
+| Guaranteed in-place sorting | Heap Sort | **O(n log n)** |
+| Traverse a tree or graph | DFS | **O(V + E)** |
+| Shortest path in a weighted graph | Dijkstra | **O((V + E) log V)** |
+
+---
+
+## Notes
+
+| Algorithm | Time Complexity |
+|------------|-----------------|
+| Linear Search | **O(n)** |
+| Binary Search | **O(log n)** |
+| Bubble Sort | **O(n²)** |
+| Selection Sort | **O(n²)** |
+| Insertion Sort | **O(n²)** |
+| Merge Sort | **O(n log n)** |
+| Quick Sort (Average) | **O(n log n)** |
+| Heap Sort | **O(n log n)** |
+| BFS | **O(V + E)** |
+| DFS | **O(V + E)** |
 
 ## Basic recursion complexity
+# Basic Recursion Complexity
+
+Recursion is a technique where a function **calls itself** to solve a smaller version of the same problem.
+
+To find the complexity of a recursive function, ask two questions:
+
+1. **How many recursive calls are made?**
+2. **How much work is done in each call?**
+
+---
+
+### Rule 1: One Recursive Call
+
+```java
+void print(int n) {
+    if (n == 0)
+        return;
+
+    System.out.println(n);
+    print(n - 1);
+}
+```
+
+Call sequence:
+
+```text
+print(5)
+ └── print(4)
+      └── print(3)
+           └── print(2)
+                └── print(1)
+                     └── print(0)
+```
+
+- Recursive calls: `n`
+- Work per call: `O(1)`
+
+**Time Complexity:** `O(n)`
+
+**Space Complexity:** `O(n)` (call stack)
+
+---
+
+### Rule 2: Two Recursive Calls
+
+```java
+void fun(int n) {
+    if (n == 0)
+        return;
+
+    fun(n - 1);
+    fun(n - 1);
+}
+```
+
+Each function creates **2 more calls**.
+
+Call tree:
+
+```text
+          n
+        /   \
+     n-1   n-1
+     / \   / \
+```
+
+**Time Complexity:** `O(2ⁿ)`
+
+**Space Complexity:** `O(n)`
+
+---
+
+### Rule 3: Binary Search Recursion
+
+```java
+int binarySearch(int[] arr, int left, int right, int target) {
+    if (left > right)
+        return -1;
+
+    int mid = (left + right) / 2;
+
+    if (arr[mid] == target)
+        return mid;
+
+    if (target < arr[mid])
+        return binarySearch(arr, left, mid - 1, target);
+
+    return binarySearch(arr, mid + 1, right, target);
+}
+```
+
+Each call searches **half** of the array.
+
+**Time Complexity:** `O(log n)`
+
+**Space Complexity:** `O(log n)`
+
+---
+
+### Rule 4: Factorial
+
+```java
+int factorial(int n) {
+    if (n == 0)
+        return 1;
+
+    return n * factorial(n - 1);
+}
+```
+
+Calls:
+
+```text
+5
+↓
+4
+↓
+3
+↓
+2
+↓
+1
+↓
+0
+```
+
+**Time Complexity:** `O(n)`
+
+**Space Complexity:** `O(n)`
+
+---
+
+### Rule 5: Fibonacci (Naive)
+
+```java
+int fib(int n) {
+    if (n <= 1)
+        return n;
+
+    return fib(n - 1) + fib(n - 2);
+}
+```
+
+Call tree:
+
+```text
+        fib(5)
+       /      \
+   fib(4)    fib(3)
+   /   \      /   \
+```
+
+Many calls are repeated.
+
+**Time Complexity:** `O(2ⁿ)`
+
+**Space Complexity:** `O(n)`
+
+---
+
+### Rule 6: Tail Recursion
+
+```java
+void print(int n) {
+    if (n == 0)
+        return;
+
+    print(n - 1);
+}
+```
+
+One recursive call per function.
+
+**Time Complexity:** `O(n)`
+
+**Space Complexity:** `O(n)`
+
+---
+
+### Easy Rules
+
+| Pattern | Time Complexity | Space Complexity |
+|---------|-----------------|------------------|
+| One recursive call (`n-1`) | `O(n)` | `O(n)` |
+| One recursive call (`n/2`) | `O(log n)` | `O(log n)` |
+| Two recursive calls | `O(2ⁿ)` | `O(n)` |
+| Factorial | `O(n)` | `O(n)` |
+| Binary Search (recursive) | `O(log n)` | `O(log n)` |
+| Naive Fibonacci | `O(2ⁿ)` | `O(n)` |
+
+---
+
+### Memory Trick
+
+- **One recursive call** → Usually **`O(n)`**
+- **Array/problem size halves each call** → **`O(log n)`**
+- **Two recursive calls** → Usually **`O(2ⁿ)`**
+- **Recursion uses stack memory**, so space complexity is usually equal to the **maximum recursion depth**.
+
+---
 
 
 ## Practice Problems
