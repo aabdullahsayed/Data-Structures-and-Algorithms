@@ -38,7 +38,52 @@ Big O is a mathematical way to describe how the performance of an algorithm chan
 
 ## Complexity of common data structures
 
+| Data Structure | Access | Search | Insert | Delete |
+|----------------|:------:|:------:|:------:|:------:|
+| Array | **O(1)** | **O(n)** | **O(n)** | **O(n)** |
+| Dynamic Array (ArrayList) | **O(1)** | **O(n)** | **O(1)\*** | **O(n)** |
+| Singly Linked List | **O(n)** | **O(n)** | **O(1)** | **O(1)** |
+| Doubly Linked List | **O(n)** | **O(n)** | **O(1)** | **O(1)** |
+| Stack | **O(1)** (Top) | **O(n)** | **O(1)** (Push) | **O(1)** (Pop) |
+| Queue | **O(1)** (Front/Rear) | **O(n)** | **O(1)** (Enqueue) | **O(1)** (Dequeue) |
+| Deque | **O(1)** | **O(n)** | **O(1)** | **O(1)** |
+| HashMap | — | **O(1)\*** | **O(1)\*** | **O(1)\*** |
+| HashSet | — | **O(1)\*** | **O(1)\*** | **O(1)\*** |
+| Binary Search Tree (BST) | **O(log n)\*** | **O(log n)\*** | **O(log n)\*** | **O(log n)\*** |
+| Heap (Priority Queue) | **O(1)** (Peek) | **O(n)** | **O(log n)** | **O(log n)** |
 
+> **\*** Average case. In the worst case, some operations (such as in a HashMap or an unbalanced BST) can degrade to **O(n)**.
+
+---
+
+## Easy Way to Remember
+
+| Data Structure | Remember |
+|----------------|----------|
+| Array | Fast access, slow insert/delete |
+| ArrayList | Same as Array, but appending at the end is usually fast |
+| Linked List | Fast insert/delete, slow access |
+| Stack | Last In, First Out (LIFO) |
+| Queue | First In, First Out (FIFO) |
+| HashMap | Very fast search, insert, and delete (average case) |
+| HashSet | Very fast membership checking (average case) |
+| BST | Keeps data sorted; operations are usually `O(log n)` if balanced |
+| Heap | Best for finding/removing the minimum or maximum element |
+
+---
+
+### Cheat Sheet
+
+| Operation | Best Data Structure |
+|-----------|---------------------|
+| Fast random access | Array |
+| Fast insert/delete at beginning or middle (known position) | Linked List |
+| Fast key-value lookup | HashMap |
+| Fast duplicate-free lookup | HashSet |
+| Last-In-First-Out | Stack |
+| First-In-First-Out | Queue |
+| Always get smallest/largest element | Heap (Priority Queue) |
+| Keep data sorted with efficient operations | Balanced BST |
 
 ## Complexity of common algorithm
 
