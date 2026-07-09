@@ -9,7 +9,7 @@ Bubble Sort is a simple comparison-based sorting algorithm that repeatedly compa
 3. Repeat for the unsorted portion of the array.
 4. Continue until the array is sorted.
 
-![Data Structures](./diagrams/bubble.svg)
+![Data Structures](../diagrams/bubble.svg)
 
 ## Selection Sort
 
