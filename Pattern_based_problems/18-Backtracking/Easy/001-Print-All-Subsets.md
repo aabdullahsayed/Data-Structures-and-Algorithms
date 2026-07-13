@@ -1,0 +1,50 @@
+# 001. Print All Subsets
+
+**Topic:** Backtracking
+**Difficulty:** Easy
+**Solution file:** [`001-Print-All-Subsets.java`](./001-Print-All-Subsets.java)
+
+## Problem
+
+Given an array of distinct integers, generate all possible subsets (the power set).
+
+## Technique Reminder
+
+Explore all possibilities via recursion, undoing choices that don't work (prune early).
+
+**Hint:** Pattern: choose -> explore -> un-choose. Add pruning conditions to cut branches early.
+
+## Example
+
+```
+Input:  arr = [1,2,3]
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+```
+
+## Constraints (typical range — adjust to the exact source problem if it differs)
+
+- 1 <= n <= 10^5
+- Values fit in standard 32-bit integer range
+
+## Approach Notes
+
+1. Restate the problem in your own words.
+2. Identify why the **Backtracking** pattern applies here.
+3. Work out a time & space complexity target before coding (usually O(n) or O(n log n)).
+4. Code the brute-force approach first if unsure, then optimize using the pattern.
+
+## Starter Code
+
+See [`001-Print-All-Subsets.java`](./001-Print-All-Subsets.java) in this folder — implement the `TODO` inside `PrintAllSubsets.printAllSubsets(...)`
+and add your own test cases in `main`.
+
+## Complexity Goal
+
+- Time: O(?)
+- Space: O(?)
+
+## Status
+
+- [ ] Solved
+- [ ] Optimized
+- [ ] Explained out loud / written notes
