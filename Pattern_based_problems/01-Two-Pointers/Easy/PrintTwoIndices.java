@@ -20,14 +20,39 @@ public class PrintTwoIndices {
      * Adjust the signature (parameter types / return type) to match the exact
      * input/output shape of this problem — the one below is a generic placeholder.
      */
-    public static int printTwoIndices(int[] arr) {
-        // TODO: implement
-        return -1;
+    public static int[] printTwoIndices(int[] arr,int target) {
+
+              int one = 0;
+              int two = arr.length-1;
+
+              while(one<two){
+
+                int sum = arr[one] + arr[two];
+
+                if(sum == target){
+                    return new int[] {one,two};
+                
+                }
+
+                else if(sum > target){
+                    two --;
+                }
+
+                else one++;
+
+              }
+
+        return null;
     }
 
     public static void main(String[] args) {
         // TODO: replace with real test cases based on the example above
-        int[] sample = {};
-        System.out.println(PrintTwoIndices.printTwoIndices(sample));
+        int[] sample = {1,2,3,4,5,6};
+        int target = 6 ;
+          int[] res = PrintTwoIndices.printTwoIndices(sample, target);
+        
+        for(int x: res){
+            System.out.print(x+" ");
+        }
     }
 }
