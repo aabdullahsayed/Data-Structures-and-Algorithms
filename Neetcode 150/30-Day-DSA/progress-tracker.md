@@ -4,7 +4,7 @@ Mark each day as you complete it. Note your weakest topic and revisit it during 
 
 | Day | Topic | Started | Completed | Problems Solved (/7) | Notes / Struggled With |
 |---|---|---|---|---|---|
-| 1  | Arrays I — Basics & Traversal            | ☐ | ☐ | __/7 | |
+| 1  | Arrays I — Basics & Traversal            | ✓ | ☐ | 3/7 | |
 | 2  | Arrays II — Two Pointers                 | ☐ | ☐ | __/7 | |
 | 3  | Arrays III — Sliding Window              | ☐ | ☐ | __/7 | |
 | 4  | Arrays IV — Prefix Sum & Kadane's        | ☐ | ☐ | __/7 | |
